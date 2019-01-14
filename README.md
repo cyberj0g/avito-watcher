@@ -9,6 +9,7 @@ This is a tiny [Avito](https://avito.ru) (a russian craigslist) crawler for pers
 # Installation
 1. Navigate to project folder and run
 ```
+sudo apt-get install python3-tk 
 pipenv install
 cd /tmp
 wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
@@ -22,8 +23,7 @@ sudo mv geckodriver /usr/local/bin/
 2. Copy the URL with all search terms to `AVITO_URLS` variable of `config/settings.py`. You can use multiple URLs split by `;`. You can also override any value in `config/settings.py` with environment variable passed to the script.
 3. Run the script
     ```
-    pipenv shell
-    python run.py --crawl --plot-prices
+    pipenv run python run.py --crawl --plot-prices
     ```
 4. Crawled data is stored in `/data/crawler-db.sqlite`. Use [sqlitedict](https://pypi.org/project/sqlitedict/) to consume it.
 
